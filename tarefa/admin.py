@@ -9,6 +9,6 @@ class Tarefas(admin.ModelAdmin):
                     'data_finalizar',
                     'finalizada', 
                     'usuario')
-    list_display_links = ('id', 'name')
+    list_display_links = ('id', 'name', 'descricao')
 
 admin.site.register(Tarefa, Tarefas)
