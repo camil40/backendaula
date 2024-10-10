@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tarefa.models import Task, Tag, Comment
+from tarefa.models import Task, Tag, Comment, Usuario
  
 class TasksAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'title', 'due_date', 'completed')
@@ -24,3 +24,4 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Task, TasksAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Usuario)

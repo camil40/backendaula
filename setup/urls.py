@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tarefa.views import TarefaViewSet, TarefaRetrieveView, ComentarioViewSet, TagViewSet, NotificacaoViewSet, FileUploadViewSet, ListaComentarioTask, ListaTagTask
+from tarefa.views import TarefaViewSet, TarefaRetrieveView, ComentarioViewSet, TagViewSet, NotificacaoViewSet, FileUploadViewSet, ListaComentarioTask, ListaTagTask, ListaUsuarioTask
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -31,5 +31,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('Tarefa/<int:pk>/',TarefaRetrieveView.as_view(), name="tarefa=retrieve"),
     path('Tarefa/<int:pk>/comentarios/', ListaComentarioTask.as_view()),
-    path('Tarefa/<int:pk>/tags/', ListaTagTask.as_view())
+    path('Tarefa/<int:pk>/tags/', ListaTagTask.as_view()),
+    path('Tarefa/<int:pk>/usuarios/', ListaUsuarioTask.as_view())
 ]

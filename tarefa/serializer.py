@@ -1,4 +1,4 @@
-from tarefa.models import Task, Comment, Tag, Notification, FileUpload
+from tarefa.models import Task, Comment, Tag, Notification, FileUpload, Usuario
 from rest_framework import serializers
 
 class TarefaSerializers(serializers.ModelSerializer):
@@ -34,5 +34,10 @@ class NotificacaoSerializers(serializers.ModelSerializer):
 class FileUploadSerializers(serializers.ModelSerializer):
     class Meta:
         model = FileUpload
+        fields = '__all__'
+        
+class ListaUsuarioSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
         fields = '__all__'
 
